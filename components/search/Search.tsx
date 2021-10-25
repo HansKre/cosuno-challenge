@@ -6,9 +6,8 @@ export default function Search() {
   const companiesContext = useContext(CompaniesContext);
   const [query, setQuery] = useState('');
 
-  function handleChange() {
-    return (e: React.FormEvent<HTMLInputElement>) =>
-      setQuery(e.currentTarget.value);
+  function handleChange(e: React.FormEvent<HTMLInputElement>) {
+    setQuery(e.currentTarget.value);
   }
 
   useEffect(() => {
@@ -23,7 +22,7 @@ export default function Search() {
       id='search'
       placeholder='Company name ...'
       value={query}
-      onChange={handleChange()}
+      onChange={handleChange}
     />
   );
 }
