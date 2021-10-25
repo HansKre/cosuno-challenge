@@ -4,8 +4,9 @@ const theme = {
     h2: '2.3rem',
     logo: '2rem',
     h3: '1.17rem',
-    p: '1rem',
-    label: '1rem',
+    p: '1.2rem',
+    label: '1.2rem',
+    input: '1.2rem',
   },
   palette: {
     primary: 'hsl(260, 8%, 14%)',
@@ -17,10 +18,10 @@ const theme = {
     grayishViolet: 'hsl(257, 7%, 63%)',
     veryDarkBlue: 'hsl(255, 11%, 22%)',
   },
-  borderRadius: '30px',
-  paddingTB: '0.5rem 0',
-  paddingTBLR: '0.5rem 0.5rem',
-  margin: '0.5rem 0',
+  borderRadius: '5px',
+  paddingTB: '0.3rem 0',
+  paddingTBLR: '0.3rem 0.3rem',
+  margin: '0.3rem 0',
 };
 
 export default theme;
