@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Column, H1, Search, Filter, Companies } from 'components';
+import { Column, H1, Controls, Companies } from 'components';
 
 export default function Home() {
   return (
@@ -9,8 +9,7 @@ export default function Home() {
       </Head>
       <Column>
         <H1>Construction Companies</H1>
-        <Search />
-        <Filter />
+        <Controls />
         <Companies />
       </Column>
     </>
