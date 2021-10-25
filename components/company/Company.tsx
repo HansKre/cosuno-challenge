@@ -6,16 +6,23 @@ import { Row } from './Row';
 import { Specialties } from './Specialties';
 import { TextContainer } from './TextContainer';
 
-export default function Company() {
+interface IProps {
+  name: string;
+  location: string;
+  specialties: string;
+  logoImg: string;
+}
+
+export default function Card({ name, location, specialties, logoImg }: IProps) {
   return (
     <Container>
       <Row>
         <TextContainer>
-          <CompanyName>Cosuno GmbH</CompanyName>
-          <Location>Berlin</Location>
-          <Specialties>Excavation, Plumbing, Electrical</Specialties>
+          <CompanyName>{name}</CompanyName>
+          <Location>{location}</Location>
+          <Specialties>{specialties}</Specialties>
         </TextContainer>
-        <Img src='https://picsum.photos/100' alt='Company Logo' />
+        <Img src={logoImg} alt='Company Logo' />
       </Row>
     </Container>
   );
