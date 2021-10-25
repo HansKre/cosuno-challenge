@@ -16,10 +16,11 @@
     "baseUrl": "./",
     "paths": {
       "@api/*": ["pages/api/*"],
+      "@contexts*": ["contexts/*"],
       "@components*": ["components/*"],
-      "@ccontexts*": ["contexts/*"],
       "@images/*": ["images/*"],
       "@pages*": ["pages*"],
+      "@root/*": ["./*"],
       "@styles/*": ["styles/*"],
       "@types*": ["types*"]
     }
