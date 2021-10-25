@@ -1,3 +1,12 @@
+import { Card } from 'components';
+
 export default function Companies() {
-  return <div>Companies</div>;
+  return (
+    <div>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
+  );
 }
