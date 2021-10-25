@@ -1,5 +1,5 @@
 export interface ICompany {
-  company: string;
+  name: string;
   location: string;
   specialties: string[];
 }

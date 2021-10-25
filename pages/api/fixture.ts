@@ -2,57 +2,57 @@ import { ICompany } from 'types';
 
 export const companies: ICompany[] = [
   {
-    company: 'Cosuno GmbH',
+    name: 'Cosuno GmbH',
     location: 'Berlin',
     specialties: ['Excavation', 'Plumbing', 'Electrical'],
   },
   {
-    company: 'Lowe GmbH',
+    name: 'Lowe GmbH',
     location: 'Stuttgart',
     specialties: ['Sanitary', 'Electrical'],
   },
   {
-    company: 'Medhurst GmbH',
+    name: 'Medhurst GmbH',
     location: 'Berlin',
     specialties: ['Excavation', 'Gardening'],
   },
   {
-    company: 'Renard GmbH',
+    name: 'Renard GmbH',
     location: 'Köln',
     specialties: ['Excavation', 'Plumbing', 'Electrical'],
   },
   {
-    company: 'Leclerc GmbH',
+    name: 'Leclerc GmbH',
     location: 'Düsseldorf',
     specialties: ['Electrical'],
   },
   {
-    company: 'Riviere GmbH',
+    name: 'Riviere GmbH',
     location: 'München',
     specialties: ['Internet', 'Electrical'],
   },
   {
-    company: 'Vasseur GmbH',
+    name: 'Vasseur GmbH',
     location: 'München',
     specialties: ['Excavation', 'Plumbing', 'Electrical'],
   },
   {
-    company: 'Bourgeois GmbH',
+    name: 'Bourgeois GmbH',
     location: 'Dortmund',
     specialties: ['Heating', 'Plumbing'],
   },
   {
-    company: 'Renault GmbH',
+    name: 'Renault GmbH',
     location: 'Leipzig',
     specialties: ['Plumbing'],
   },
   {
-    company: 'Pierre GmbH',
+    name: 'Pierre GmbH',
     location: 'Köln',
     specialties: ['Tiler', 'Sanitary'],
   },
   {
-    company: 'Le roux GmbH',
+    name: 'Le roux GmbH',
     location: 'Berlin',
     specialties: ['Tiler', 'Plumbing'],
   },
