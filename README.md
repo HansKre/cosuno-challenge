@@ -20,7 +20,13 @@ Tests are implemented using [`cypress.io`](https://www.cypress.io/), an End to E
 - `styled-components` to style components
 - `TypeScript`
 - `Cypress` for tests
+- `SWR` for data fetching
 
-## Backlog
+## Improvement Ideas
 
-- [ ] .
+- [ ] Validate API-response using data validation library like [joi](https://joi.dev/).
+- [ ] Create a custom hook for data fetching.
+- [ ] Add animations for company card entrance.
+- [ ] Add loading spinner.
+- [ ] Add on-hover animations for search input and filter.
+- [ ] Add pagination.
