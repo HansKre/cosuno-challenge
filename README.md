@@ -30,3 +30,4 @@ Tests are implemented using [`cypress.io`](https://www.cypress.io/), an End to E
 - [ ] Add loading spinner.
 - [ ] Add on-hover animations for search input and filter.
 - [ ] Add pagination.
+- [ ] Improve type-safety for IActions (e.g. 'set'-type always with newCompanies-attribute only).
