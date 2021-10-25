@@ -1,0 +1,14 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: hsl(257, 27%, 26%);
+  background-color: hsl(230, 25%, 95%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}

@@ -1,0 +1,34 @@
+{
+  "name": "cosuno coding challenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "prod": "npm run build && npm run start",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "cypress:open": "cypress open",
+    "cypress:run": "(npm run build) && (npm run start &) && (cypress run --browser chrome)",
+    "test": "npm run cypress:run"
+  },
+  "dependencies": {
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.1",
+    "webdev-essentials": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.21",
+    "@types/styled-components": "^5.1.14",
+    "cypress": "^8.6.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "typescript": "4.4.3"
+  },
+  "repository": {
+    "url": "..."
+  },
+  "license": "ISC"
+}
