@@ -1,15 +1,6 @@
-import theme from '@styles/theme';
 import React, { useContext, useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { CompaniesContext } from 'contexts';
-
-const Input = styled.input`
-  border-radius: ${theme.borderRadius};
-  padding: ${theme.paddingTBLR};
-  border: solid;
-  border-color: ${theme.palette.grayishViolet};
-  border-width: 1px;
-`;
+import { Input } from './Input';
 
 export default function Search() {
   const companiesContext = useContext(CompaniesContext);
