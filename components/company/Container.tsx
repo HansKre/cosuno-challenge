@@ -14,7 +14,9 @@ export const Container = styled.div`
   border-width: 1px;
   margin: ${theme.margin};
   background-color: ${theme.palette.cardBackground};
+  box-shadow: 0 4px 8px 0 ${theme.palette.grayishViolet};
+  transition: 0.3s;
   &:hover {
-    outline: auto;
+    box-shadow: 0 8px 16px 0 ${theme.palette.grayishViolet};
   }
 `;
