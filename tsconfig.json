@@ -24,6 +24,6 @@
       "@types*": ["types*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/.gitkeep"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/index.tsx"],
   "exclude": ["node_modules"]
 }

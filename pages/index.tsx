@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Column, H1, Search, Filter, Companies } from 'components';
 
 export default function Home() {
   return (
@@ -6,7 +7,12 @@ export default function Home() {
       <Head>
         <title>Cosuno Coding Challenge</title>
       </Head>
-      <h1>Foo Bar</h1>
+      <Column>
+        <H1>Construction Companies</H1>
+        <Search />
+        <Filter />
+        <Companies />
+      </Column>
     </>
   );
 }
