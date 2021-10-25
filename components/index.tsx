@@ -1,4 +1,4 @@
-export * from './card';
+export * from './company';
 export * from './companies';
 export * from './controls';
 export * from './search';

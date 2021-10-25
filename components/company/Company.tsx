@@ -6,7 +6,7 @@ import { Row } from './Row';
 import { Specialties } from './Specialties';
 import { TextContainer } from './TextContainer';
 
-export default function Card() {
+export default function Company() {
   return (
     <Container>
       <Row>
