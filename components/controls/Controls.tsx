@@ -10,7 +10,7 @@ export default function Controls() {
   return (
     <Container>
       <Search />
-      <Filter filtered={false} />
+      <Filter />
     </Container>
   );
 }

@@ -5,11 +5,7 @@ import Checkbox from './Checkbox';
 import { FilterIconActive, FilterIcon } from './Icons';
 import { Modal } from './Modal';
 
-interface IProps {
-  filtered: boolean;
-}
-
-export default function Filter({ filtered }: IProps) {
+export default function Filter() {
   const companiesContext = useContext(CompaniesContext);
   const { companies, filteredCompanies, specialtiesFilter } =
     companiesContext.state;
