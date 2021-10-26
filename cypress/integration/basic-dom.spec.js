@@ -95,6 +95,28 @@ describe('Basic DOM Tests', () => {
         cy.get('label:contains("Excavation")').click();
         cy.get('.company').should('have.length', 6);
       });
+
+      it('should filter on search and specialties selected', () => {
+        cy.get('#search').type('a');
+        cy.get('.company').should('have.length', 3);
+        cy.get('[class^=Icon]').click();
+        cy.get('label:contains("Electrical")').click();
+        cy.get('.company').should('have.length', 2);
+        cy.get('[class^=Button]').click();
+        cy.get('#search').type('{backspace}');
+        cy.get('.company').should('have.length', 6);
+        cy.get('[class^=Icon]').click();
+        cy.get('label:contains("Excavation")').click();
+        cy.get('.company').should('have.length', 3);
+        cy.get('label:contains("Sanitary")').click();
+        cy.get('.company').should('have.length', 0);
+        cy.get('[class^=Button]').click();
+        cy.get('#search').type('a');
+        cy.get('.company').should('have.length', 0);
+        cy.get('[class^=Icon]').click();
+        cy.get('label:contains("Sanitary")').click();
+        cy.get('.company').should('have.length', 2);
+      });
     });
   });
 });

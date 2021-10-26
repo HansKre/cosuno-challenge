@@ -48,7 +48,7 @@ export const reducer = (state: State, action: Actions): State => {
             ...state,
             specialtiesFilter: [...state.specialtiesFilter, newSpecialty],
           };
-          return searchFilter(newQuery, newState);
+          return searchFilter(undefined, newState);
         }
       }
       return state;
@@ -62,7 +62,7 @@ export const reducer = (state: State, action: Actions): State => {
             ...state,
             specialtiesFilter: newSpecialtiesFilter,
           };
-          return searchFilter(newQuery, newState);
+          return searchFilter(undefined, newState);
         }
       }
       return state;
@@ -89,9 +89,13 @@ export default CompaniesContext;
 
 function searchFilter(newQuery: string | undefined, state: State) {
   let searchResult: Company[];
-  if (newQuery) {
+  if (newQuery || newQuery === '') {
     searchResult = state.companies.filter((company) =>
       company.name.toLowerCase().includes(newQuery.toLowerCase())
+    );
+  } else if (state.query) {
+    searchResult = state.companies.filter((company) =>
+      company.name.toLowerCase().includes(state.query.toLowerCase())
     );
   } else {
     searchResult = [...state.companies];
@@ -109,6 +113,6 @@ function searchFilter(newQuery: string | undefined, state: State) {
   return {
     ...state,
     filteredCompanies: filterResult,
-    query: newQuery || '',
+    query: newQuery || newQuery === '' ? newQuery : state.query,
   };
 }
