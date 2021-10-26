@@ -20,7 +20,9 @@ describe('Basic DOM Tests', () => {
           .each(($card) => {
             cy.wrap($card)
               .should('have.css', 'height', '200px')
-              .should('have.css', 'width', '413px');
+              .should('have.css', 'width', '413px')
+              .find('[class*=Img]')
+              .then(($img) => expect($img).to.exist);
           });
       });
 
@@ -47,6 +49,15 @@ describe('Basic DOM Tests', () => {
                 );
             });
         });
+      });
+
+      it('should filter on typing', () => {
+        cy.get('#search').type('cosuno');
+        cy.get('.company').should('have.length', 1);
+        cy.get('#search').type(
+          '{backspace}{backspace}{backspace}{backspace}{backspace}'
+        );
+        cy.get('.company').should('have.length', 2);
       });
     });
   });
