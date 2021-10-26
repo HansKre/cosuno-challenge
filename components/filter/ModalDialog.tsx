@@ -6,6 +6,7 @@ import { Column } from './Column';
 import { DialogTitle } from './DialogTitle';
 import { Modal } from './Modal';
 import { Button } from './Button';
+import { ICompany } from 'types';
 
 interface IProps {
   visible: boolean;
@@ -34,22 +35,14 @@ export default function ModalDialog({ visible, onClick }: IProps) {
         <Column>
           <DialogTitle>Filter</DialogTitle>
           {companies &&
-            companies
-              .reduce<string[]>((uniqueSpecialties, company) => {
-                company.specialties.forEach((specialty) => {
-                  if (!uniqueSpecialties.includes(specialty))
-                    uniqueSpecialties.push(specialty);
-                });
-                return uniqueSpecialties;
-              }, [])
-              .map((specialty) => (
-                <Checkbox
-                  key={specialty}
-                  label={specialty}
-                  checked={specialtiesFilter.includes(specialty)}
-                  onChange={(e) => handleChange(e, specialty)}
-                />
-              ))}
+            uniqueSpecialties(companies).map((specialty) => (
+              <Checkbox
+                key={specialty}
+                label={specialty}
+                checked={specialtiesFilter.includes(specialty)}
+                onChange={(e) => handleChange(e, specialty)}
+              />
+            ))}
           <Button onClick={onClick}>Ok</Button>
         </Column>
       </Modal>
@@ -57,4 +50,13 @@ export default function ModalDialog({ visible, onClick }: IProps) {
   ) : (
     <></>
   );
+}
+function uniqueSpecialties(companies: ICompany[]) {
+  return companies.reduce<string[]>((uniqueSpecialties, company) => {
+    company.specialties.forEach((specialty) => {
+      if (!uniqueSpecialties.includes(specialty))
+        uniqueSpecialties.push(specialty);
+    });
+    return uniqueSpecialties;
+  }, []);
 }
