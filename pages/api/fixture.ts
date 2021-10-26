@@ -1,6 +1,6 @@
-import { ICompany } from 'types';
+import { Company } from 'types';
 
-export const companies: ICompany[] = [
+export const companies: Company[] = [
   {
     name: 'Cosuno GmbH',
     location: 'Berlin',

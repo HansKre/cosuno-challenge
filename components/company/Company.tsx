@@ -6,14 +6,14 @@ import { Row } from './Row';
 import { Specialties } from './Specialties';
 import { TextContainer } from './TextContainer';
 
-interface IProps {
+interface Props {
   name: string;
   location: string;
   specialties: string;
   logoImg: string;
 }
 
-export default function Card({ name, location, specialties, logoImg }: IProps) {
+export default function Card({ name, location, specialties, logoImg }: Props) {
   return (
     <Container>
       <Row>

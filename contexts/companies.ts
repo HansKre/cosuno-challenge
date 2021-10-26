@@ -1,28 +1,28 @@
 import { createContext } from 'react';
-import { ICompany } from 'types';
+import { Company } from 'types';
 
-export interface IActions {
+export interface Actions {
   type: 'set' | 'searchFilter' | 'addSpecialty' | 'removeSpecialty';
-  companies?: ICompany[];
+  companies?: Company[];
   query?: string;
   specialty?: string;
 }
 
-export interface IState {
-  companies: ICompany[];
-  filteredCompanies: ICompany[];
+export interface State {
+  companies: Company[];
+  filteredCompanies: Company[];
   specialtiesFilter: string[];
   query: string;
 }
 
-export const initialState: IState = {
+export const initialState: State = {
   companies: [],
   filteredCompanies: [],
   specialtiesFilter: [],
   query: '',
 };
 
-export const reducer = (state: IState, action: IActions): IState => {
+export const reducer = (state: State, action: Actions): State => {
   const {
     type,
     companies: newCompanies,
@@ -73,12 +73,12 @@ export const reducer = (state: IState, action: IActions): IState => {
   }
 };
 
-export interface IContextProps {
-  state: IState;
-  dispatch: React.Dispatch<IActions>;
+export interface Props {
+  state: State;
+  dispatch: React.Dispatch<Actions>;
 }
 
-const CompaniesContext = createContext<IContextProps>({
+const CompaniesContext = createContext<Props>({
   state: initialState,
   dispatch: () => {},
 });
@@ -87,8 +87,8 @@ export const CompaniesContextConsumer = CompaniesContext.Consumer;
 export const CompaniesContextProvider = CompaniesContext.Provider;
 export default CompaniesContext;
 
-function searchFilter(newQuery: string | undefined, state: IState) {
-  let searchResult: ICompany[];
+function searchFilter(newQuery: string | undefined, state: State) {
+  let searchResult: Company[];
   if (newQuery) {
     searchResult = state.companies.filter((company) =>
       company.name.toLowerCase().includes(newQuery.toLowerCase())
@@ -96,7 +96,7 @@ function searchFilter(newQuery: string | undefined, state: IState) {
   } else {
     searchResult = [...state.companies];
   }
-  let filterResult: ICompany[];
+  let filterResult: Company[];
   if (state.specialtiesFilter.length > 0) {
     filterResult = searchResult.filter((company) =>
       state.specialtiesFilter.every((specialty) =>

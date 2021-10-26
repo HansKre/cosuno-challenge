@@ -2,11 +2,11 @@ import { Company } from 'components';
 import { useContext } from 'react';
 import { CompaniesContext } from 'contexts';
 
-interface IProps {
+interface Props {
   error: boolean;
   loading: boolean;
 }
-export default function Companies({ error, loading }: IProps) {
+export default function Companies({ error, loading }: Props) {
   const companiesContext = useContext(CompaniesContext);
   const { filteredCompanies: companies } = companiesContext.state;
 

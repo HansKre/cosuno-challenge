@@ -1,10 +1,10 @@
-import { ICompany } from 'types';
+import { Company } from 'types';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { companies } from './fixture';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ICompany[]>
+  res: NextApiResponse<Company[]>
 ) {
   if (req.method === 'GET') {
     if (companies && companies.length > 0) {

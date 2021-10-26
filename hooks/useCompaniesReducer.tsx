@@ -1,7 +1,7 @@
 import { useEffect, useReducer } from 'react';
 import useSWR from 'swr';
 import { initialState, reducer } from 'contexts';
-import { ICompany } from 'types';
+import { Company } from 'types';
 import { API_ENDPOINT } from '@root/constants';
 
 export default function useCompaniesReducer() {
@@ -16,7 +16,7 @@ export default function useCompaniesReducer() {
     });
   };
 
-  const { data: companies, error } = useSWR<ICompany[], any>(
+  const { data: companies, error } = useSWR<Company[], any>(
     API_ENDPOINT,
     fetcher
   );

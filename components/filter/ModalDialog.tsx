@@ -6,13 +6,13 @@ import { Column } from './Column';
 import { DialogTitle } from './DialogTitle';
 import { Modal } from './Modal';
 import { Button } from './Button';
-import { ICompany } from 'types';
+import { Company } from 'types';
 
-interface IProps {
+interface Props {
   visible: boolean;
   onClick: () => void;
 }
-export default function ModalDialog({ visible, onClick }: IProps) {
+export default function ModalDialog({ visible, onClick }: Props) {
   const companiesContext = useContext(CompaniesContext);
   const { companies, specialtiesFilter } = companiesContext.state;
   const { dispatch } = companiesContext;
@@ -51,7 +51,7 @@ export default function ModalDialog({ visible, onClick }: IProps) {
     <></>
   );
 }
-function uniqueSpecialties(companies: ICompany[]) {
+function uniqueSpecialties(companies: Company[]) {
   return companies.reduce<string[]>((uniqueSpecialties, company) => {
     company.specialties.forEach((specialty) => {
       if (!uniqueSpecialties.includes(specialty))

@@ -1,4 +1,4 @@
-export interface ICompany {
+export interface Company {
   name: string;
   location: string;
   specialties: string[];
