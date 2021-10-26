@@ -2,7 +2,7 @@ import CompaniesContext from '@contextscompanies';
 import theme from '@root/styles/theme';
 import React, { useContext, useState } from 'react';
 import { IoFilterCircleOutline, IoFilterCircleSharp } from 'react-icons/io5';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Checkbox from './Checkbox';
 
 interface IProps {
@@ -33,6 +33,21 @@ const Modal = styled.div`
   padding: ${theme.paddingTB};
 `;
 
+const iconStyle = css`
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    transform: rotate(20deg);
+  }
+`;
+const FilterIconActive = styled(IoFilterCircleSharp)`
+  ${iconStyle}
+`;
+
+const FilterIcon = styled(IoFilterCircleOutline)`
+  ${iconStyle}
+`;
+
 export default function Filter({ filtered }: IProps) {
   const companiesContext = useContext(CompaniesContext);
   const { companies, filteredCompanies, specialtiesFilter } =
@@ -56,15 +71,9 @@ export default function Filter({ filtered }: IProps) {
   return (
     <>
       {specialtiesFilter.length > 0 ? (
-        <IoFilterCircleSharp
-          onClick={handleClick}
-          style={{ fontSize: '2rem' }}
-        />
+        <FilterIconActive onClick={handleClick} style={{ fontSize: '2rem' }} />
       ) : (
-        <IoFilterCircleOutline
-          onClick={handleClick}
-          style={{ fontSize: '2rem' }}
-        />
+        <FilterIcon onClick={handleClick} style={{ fontSize: '2rem' }} />
       )}
       {visible && (
         <>

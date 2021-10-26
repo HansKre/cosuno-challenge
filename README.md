@@ -28,6 +28,6 @@ Tests are implemented using [`cypress.io`](https://www.cypress.io/), an End to E
 - [ ] Create a custom hook for data fetching.
 - [ ] Add animations for company card entrance.
 - [ ] Add loading spinner.
-- [ ] Add on-hover animations for search input and filter.
 - [ ] Add pagination.
 - [ ] Improve type-safety for IActions (e.g. 'set'-type always with newCompanies-attribute only).
+- [ ] Mobile Responsiveness.
