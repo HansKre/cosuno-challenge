@@ -15,7 +15,7 @@ interface Props {
 
 export default function Card({ name, location, specialties, logoImg }: Props) {
   return (
-    <Container>
+    <Container className='company'>
       <Row>
         <TextContainer>
           <CompanyName>{name}</CompanyName>
