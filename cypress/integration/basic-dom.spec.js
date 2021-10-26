@@ -59,6 +59,42 @@ describe('Basic DOM Tests', () => {
         );
         cy.get('.company').should('have.length', 2);
       });
+
+      it('should open and close filter dialog', () => {
+        cy.get('[class^=Modal]').should('not.exist');
+        cy.get('[class^=Icon]').click();
+        cy.get('[class^=Modal]').should('be.visible');
+        cy.get('[class^=Blur]').click({ force: true });
+        cy.get('[class^=Modal]').should('not.exist');
+        cy.get('[class^=Icon]').click();
+        cy.get('[class^=Modal]').should('be.visible');
+        cy.get('[class^=Button]').click();
+        cy.get('[class^=Modal]').should('not.exist');
+      });
+
+      it('should filter on tiler specialty', () => {
+        cy.get('[class^=Icon]').click();
+        cy.get(':nth-child(9) > input').click();
+        cy.get('.company').should('have.length', 2);
+      });
+
+      it('should remove filter when tiler specialty is unchecked', () => {
+        cy.get('[class^=Icon]').click();
+        cy.get(':nth-child(9) > input').click();
+        cy.get('.company').should('have.length', 2);
+        cy.get(':nth-child(9) > input').click();
+        cy.get('.company').should('have.length', 11);
+      });
+
+      it('should filter when multiple specialties are selected and deselected in different order', () => {
+        cy.get('[class^=Icon]').click();
+        cy.get('label:contains("Excavation")').click();
+        cy.get('.company').should('have.length', 4);
+        cy.get(':nth-child(3) > input').click();
+        cy.get('.company').should('have.length', 3);
+        cy.get('label:contains("Excavation")').click();
+        cy.get('.company').should('have.length', 6);
+      });
     });
   });
 });
