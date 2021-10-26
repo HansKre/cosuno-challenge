@@ -55,7 +55,7 @@ export default function Filter({ filtered }: IProps) {
   }
   return (
     <>
-      {filtered ? (
+      {specialtiesFilter.length > 0 ? (
         <IoFilterCircleSharp
           onClick={handleClick}
           style={{ fontSize: '2rem' }}
