@@ -22,7 +22,7 @@ export default function useCompaniesReducer() {
   );
 
   useEffect(() => {
-    companiesDispatch({ type: 'set', newCompanies: companies });
+    companiesDispatch({ type: 'set', companies: companies });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [companies]);
 
