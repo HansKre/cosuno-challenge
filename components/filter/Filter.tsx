@@ -2,13 +2,15 @@ import CompaniesContext from '@contextscompanies';
 import React, { useContext, useState } from 'react';
 import { Blur } from './Blur';
 import Checkbox from './Checkbox';
+import { Column } from './Column';
+import { DialogTitle } from './DialogTitle';
 import { FilterIconActive, FilterIcon } from './Icons';
 import { Modal } from './Modal';
+import { Button } from './Button';
 
 export default function Filter() {
   const companiesContext = useContext(CompaniesContext);
-  const { companies, filteredCompanies, specialtiesFilter } =
-    companiesContext.state;
+  const { companies, specialtiesFilter } = companiesContext.state;
   const { dispatch } = companiesContext;
 
   const [visible, setVisible] = useState(false);
@@ -36,8 +38,8 @@ export default function Filter() {
         <>
           <Blur onClick={handleClick} />
           <Modal>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <h2 style={{ alignSelf: 'center' }}>Filter</h2>
+            <Column>
+              <DialogTitle>Filter</DialogTitle>
               {companies &&
                 companies
                   .reduce<string[]>((uniqueSpecialties, company) => {
@@ -55,8 +57,8 @@ export default function Filter() {
                       onChange={(e) => handleChange(e, specialty)}
                     />
                   ))}
-            </div>
-            <button onClick={handleClick}>Ok</button>
+              <Button onClick={handleClick}>Ok</Button>
+            </Column>
           </Modal>
         </>
       )}
